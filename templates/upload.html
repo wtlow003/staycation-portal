@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block mainblock %}
+<div class="card-header">
+  <h2 style="font-weight: bold">Upload recordings</h2>
+</div>
+<div class="card-body">
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input name="type" type="hidden" value="upload">
+    <div>
+      <label for="upload">Upload CSV file</label>
+      <div>
+        <label for="datatype">with data type of:</label>
+        <select name="datatype" id="datatype">
+          <option value="users">Users</option>
+          <option value="staycation">Staycation</option>
+          <option value="booking">Booking</option>
+        </select>
+      </div>
+    </div>
+    <div class="my-2">
+      <input class="upload" id="upload" name="file" type="file" accept=".csv" required>
+    </div>
+    <div class="mt-2">
+      <input type="submit" value="Upload" type="upload">
+    </div>
+  </form>
+</div>
+{% endblock %}

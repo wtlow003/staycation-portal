@@ -1,0 +1,17 @@
+<!-- creating macro that helps to render field with label and list errors if any -->
+<!-- form format is automatically genetated by WTForms -->
+{% macro render_field(field) %}
+<div class="form-group">
+  <!---- given the args we pass in for render_field(), we can automatically generate labels for the form input -->
+  <label for="{{ field.name }} ">
+    <h4>{{ field.label.text.capitalize() }}</h4>
+    <!---- as we return python string, we will need to ensure jinja that data is already HTML-escaped with "|safe" filter -->
+  </label> {{ field(class_='form-control', **kwargs) | safe }}
+  <!---- if there's any errors, we will place the error in red under the form field -->
+  <ul>
+    {% for error in field.errors %}
+    <li style="color:red;">{{ error }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endmacro %}

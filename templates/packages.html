@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block products %}
+{% for product in products %}
+<div class="col-4">
+  <div class="card-common mb-5 text-center" style="min-width: 18em;">
+    <img class=" card-img-top" src="{{ product.image_url }}">
+    <div class="card-body">
+      <h5 class="card-title" style="font-weight: bold">{{ product.hotel_name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+    </div>
+    <div class="card-footer">
+      <a href="{{ url_for('booking.book_hotel', hotel_name=product.hotel_name) }}" class="btn btn-primary">Book</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

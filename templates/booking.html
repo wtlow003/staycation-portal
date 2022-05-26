@@ -1,0 +1,30 @@
+{% from "_render_field.html" import render_field %}
+{% extends "base.html" %}
+{% block hotel %}
+<div class="row">
+  <div class="col-4">
+    <div class="card-common mb-5 text-center">
+      <img class="card-img-top" src="{{ hotel.image_url }}">
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: bold">{{ hotel.hotel_name }}</h5>
+        <p class="card-text">{{ hotel.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-common col-5 mb-auto">
+    <div class="card-header">
+      <h2 style="font-weight: bold">Select This Offer</h2>
+    </div>
+    <div class="card-body">
+      <form action="{{ url_for('booking.book_hotel', hotel_name=hotel.hotel_name) }}" method="post"
+        onsubmit="alert('Booking made successfully!');">
+        {{ render_field(form.date, type="date", id="date") }}
+        {{ form.hidden_tag() }}
+        <div class="row justify-content-front mx-1 mt-3">
+          <button type="submit" class="btn btn-primary" , value="book">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
