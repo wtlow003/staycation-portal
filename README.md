@@ -44,7 +44,7 @@ TBC
 
 ### Poetry
 
-This project adopts [poetry](https://python-poetry.org/) for dependency maangement.
+This project adopts [poetry](https://python-poetry.org/) for dependency management.
 
 To install all require packages and dependencies:
 ```bash
