@@ -5,7 +5,7 @@ description = "Full stack web application for staycation booking platform"
 authors = ["wtlow003 <wtlow003@suss.edu.sg>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 click = "8.1.2"
 dnspython = "2.2.1"
 email-validator = "1.1.3"
