@@ -7,7 +7,7 @@ def create_app():
     # create an instance of the Flask WSGI application
     app = Flask(__name__)
     # defining the database URI
-    app.config["MONGODB_SETTINGS"] = {"db": "eca", "host": "localhost"}
+    app.config["MONGODB_SETTINGS"] = {"db": "eca", "host": "mongodb"}
     # setting path for all static files in application
     app.static_folder = "assets"
     app.config["TEMPLATES_AUTO_RELOAD"] = True
