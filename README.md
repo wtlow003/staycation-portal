@@ -19,7 +19,7 @@ The **Staycation Portal** is a full stack web application developed with the [Fl
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Getting Started](#getting-started)
-    - [Requirements](#requirements)
+    - [Pre-requisite(s)](#pre-requisites)
     - [Poetry](#poetry)
     - [Docker](#docker)
   - [Project Organisation](#project-organisation)
@@ -36,10 +36,17 @@ Meanwhile, from a business adminstrator point-of-view, they can login the websit
 
 To run the project, I highly advised you create a virtual environment to self-contain the necessary dependencies required to generate recommendations.
 
-### Requirements
+### Pre-requisite(s)
 
-```
-TBC
+If you are looking to run the application locally via [poetry](#poetry) environment, you will need to install [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) by following the official instructions wrt. to your operating system.
+
+Please ensure that MongoDB is up and running before starting up the application by using the command:
+```bash
+# if started as MacOS service
+brew services list
+
+# if started manually as background process
+ps aux | grep -v grep | grep mongod
 ```
 
 ### Poetry
@@ -50,7 +57,13 @@ To install all require packages and dependencies:
 ```bash
 poetry install
 ```
-Subsequently, to enter the virtual env created by poetry and execute the application:
+
+As we are running the application locally, ensure that the connection to the backend reflects the localhost MongoDB setup by changing the following code in the `app/__init__.py` as per:
+```python
+app.config["MONGODB_SETTINGS"] = {"db": "eca", "host": "localhost"}
+```
+
+Subsequently, you may enter the virtual env created by poetry and execute the application via a custom shell script:
 ```bash
 poetry shell
 
@@ -64,9 +77,11 @@ chmod +x ./start.sh
 
 Other than poetry, [Docker]() is also available to run the application in a docker container.
 
+To run the application in containers, you can setup both the Flask and MongoDB containers with:
 ```docker
-TBC
+docker compose up --build
 ```
+Thereafter, you can visit the application @ [here](http://localhost:5000).
 
 ## Project Organisation
 
