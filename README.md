@@ -12,12 +12,15 @@
     <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg">
 </p>
 
-The **Staycation Portal** is a full stack web application developed with the [Flask](https://flask.palletsprojects.com/en/2.1.x/) framework. This project is developed as part of the [ICT239: Web Application Development](https://www.suss.edu.sg/courses/detail/ict239) module at Singapore University of Social Sciences (SUSS).
+The **Staycation Portal** is a minimal full stack web application developed with the [Flask](https://flask.palletsprojects.com/en/2.1.x/) framework. This project is developed as part of the [ICT239: Web Application Development](https://www.suss.edu.sg/courses/detail/ict239) module at Singapore University of Social Sciences (SUSS).
 
 ## Table of Contents
 - [Staycation Portal](#staycation-portal)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
+          - [Booking Staycation](#booking-staycation)
+          - [Batch Upload Site Information](#batch-upload-site-information)
+          - [Dashboard Visualisation (Bookings)](#dashboard-visualisation-bookings)
   - [Getting Started](#getting-started)
     - [Pre-requisite(s)](#pre-requisites)
     - [Poetry](#poetry)
@@ -26,11 +29,27 @@ The **Staycation Portal** is a full stack web application developed with the [Fl
 
 ## Description
 
-The **Staycation Portal** is a platform that designed to enable consumer to register themselves to view staycation packages available, and book the package if they found that a particular one of the packages is what they need.
+The **Staycation Portal** is a platform that is designed to enable customer to register themselves to view staycation packages available, and book the package if they found that a particular one of the packages is what they need.
 
-Meanwhile, from a business adminstrator point-of-view, they can login the website as an admin user to batch upload staycation packages, registered users, and booking records; while also view dashboad that summarizes incoming staycation booking over a certain period of time.
+###### Booking Staycation
 
+<p align="center">
+  <img src="./misc/booking.gif">
+</p>
 
+Meanwhile, from a business administrator point-of-view, they can login the website as an admin user to batch upload site information such as staycation packages, registered users, and booking records; while also view dashboard that summarizes incoming staycation booking over a certain period of time.
+
+###### Batch Upload Site Information
+
+<p align="center">
+  <img src="./misc/upload.gif">
+</p>
+
+###### Dashboard Visualisation (Bookings)
+
+<p align="center">
+  <img src="./misc/dashboard.gif">
+</p>
 
 ## Getting Started
 
@@ -38,7 +57,7 @@ To run the project, I highly advised you create a virtual environment to self-co
 
 ### Pre-requisite(s)
 
-If you are looking to run the application locally via [poetry](#poetry) environment, you will need to install [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) by following the official instructions wrt. to your operating system.
+If you are looking to run the application locally via [Poetry](#poetry) environment, you will need to install [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) by following the official instructions wrt. to your operating system.
 
 Please ensure that MongoDB is up and running before starting up the application by using the command:
 ```bash
@@ -51,7 +70,7 @@ ps aux | grep -v grep | grep mongod
 
 ### Poetry
 
-This project adopts [poetry](https://python-poetry.org/) for dependency management.
+This project adopts [Poetry](https://python-poetry.org/) for dependency management.
 
 To install all require packages and dependencies:
 ```bash
@@ -75,13 +94,13 @@ chmod +x ./start.sh
 
 ### Docker
 
-Other than poetry, [Docker]() is also available to run the application in a docker container.
+Other than poetry, [Docker](https://www.docker.com/) is also available to run the application in a docker container.
 
-To run the application in containers, you can setup both the Flask and MongoDB containers with:
+To run the application in containers, you can setup the Flask and MongoDB containers with:
 ```docker
-docker compose up --build
+docker compose up
 ```
-Thereafter, you can visit the application @ [here](http://localhost:5000).
+Thereafter, you can visit the application @ [http://localhost:5000](http://localhost:5000).
 
 ## Project Organisation
 
